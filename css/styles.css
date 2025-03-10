@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ff4e50, #f9d423);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    overflow-x: hidden;
+}
+
+.header {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.image-container {
+    margin: 50px 0;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(255,255,255,0.6);
+    animation: scaleIn 2s ease-in-out;
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, transparent 20%, rgba(255,255,255,0.2) 30%, transparent 40%);
+    animation: rotate 8s linear infinite;
+}
+
+.character-profile,
+.growth-story,
+.charm-analysis {
+    max-width: 800px;
+    color: white;
+    line-height: 1.8;
+    margin: 20px 0;
+    padding: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+    animation: slideIn 2s ease-in-out;
+}
+
+.interactive-section {
+    max-width: 800px;
+    width: 100%;
+    margin: 30px 0;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.interactive-btn {
+    padding: 15px 30px;
+    background: #ffffff;
+    color: #333;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.interactive-btn:hover {
+    transform: scale(1.05);
+}
+
+.quote-box {
+    margin-top: 20px;
+    color: white;
+    font-style: italic;
+    text-align: center;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); }
+    to { transform: scale(1); }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* 新增关键样式 */
+.profile-table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+}
+
+.profile-table th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.timeline {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.ability-demo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.ability-card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.ability-card:hover {
+    transform: translateY(-10px);
+}
+
+.quote-section {
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    border-radius: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    box-shadow: inset 0 0 20px rgba(255,255,255,0.05);
+}
+
+.quiz-btn {
+    background: #ffd700;
+    color: #333;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.quiz-btn:hover {
+    transform: scale(1.05);
+}
+
+.answer-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    color: #ffd700;
+}
+
+/* 原有动画增强 */
+@keyframes rotate {
+    from { transform: rotate(0deg); filter: hue-rotate(0deg); }
+    to { transform: rotate(360deg); filter: hue-rotate(360deg); }
+}
+
+.aura-effect::before {
+    background: radial-gradient(circle, transparent 20%, rgba(255,255,255,0.3) 30%, transparent 40%);
+    background-size: 40% 40%;
+}
