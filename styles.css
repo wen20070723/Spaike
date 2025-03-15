@@ -1,0 +1,260 @@
+/* 全局样式 */
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background-color: #fbefff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 导航栏样式 */
+nav {
+    background-color: #6a5acd;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #483d8b;
+}
+
+/* 返回主页按钮样式 */
+.home-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(45deg, #ffb6c1, #ff69b4);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    z-index: 101;
+}
+
+.home-button:hover {
+    transform: scale(1.05);
+}
+
+/* 头部样式 */
+header {
+    background: linear-gradient(to bottom, #ffb6c1, #ff8da1);
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 20px;
+}
+
+/* 主体内容样式 */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #6a5acd;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* 角色介绍部分样式 */
+#spike-intro {
+    text-align: center;
+}
+
+.character-image {
+    margin-bottom: 30px;
+}
+
+.character-image img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #ffb6c1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 成长历程部分样式 */
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #ffb6c1;
+}
+
+.timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+    padding: 20px;
+    background-color: #fff0f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -32px;
+    top: 20px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ffb6c1;
+    border: 2px solid #6a5acd;
+}
+
+.timeline-item h3 {
+    color: #6a5acd;
+    margin-top: 0;
+    font-size: 24px;
+}
+
+/* 特殊能力部分样式 */
+.ability-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.ability {
+    background-color: #fff0f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.ability:hover {
+    transform: translateY(-5px);
+}
+
+.ability h3 {
+    color: #6a5acd;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* 拼图游戏部分样式 */
+#spike-game {
+    text-align: center;
+}
+
+#puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.puzzle-piece {
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    transition: transform 0.2s ease;
+    will-change: transform;
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.05);
+}
+
+#level-info {
+    margin-bottom: 20px;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #6a5acd;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 18px;
+    }
+
+    #puzzle-container {
+        grid-template-columns: repeat(3, 80px);
+    }
+
+    .puzzle-piece {
+        width: 80px;
+        height: 80px;
+    }
+}
